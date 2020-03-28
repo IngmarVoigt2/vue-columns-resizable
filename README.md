@@ -90,6 +90,21 @@ Resize on thead
 </table>
 ```
 
+Resize on v-data-table (Vuetify ^2.0)
+
+```html
+<v-data-table
+    ref="table"
+    v-model="selected"
+    v-columns-resizable
+>
+    <template v-slot:items="{ props }"> //It is not necessary to use template at all
+    </template>
+</v-data-table>
+```
+
+
 ## Changelog
 
+* 0.1.0 - Allow use on top elements (Vuetify use)
 * 0.0.1 - Resize on columns & Resize on thead
