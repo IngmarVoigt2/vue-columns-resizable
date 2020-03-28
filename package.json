@@ -1,6 +1,6 @@
 {
-  "name": "vue-columns-resizable",
-  "version": "0.0.1",
+  "name": "vue-columns-resizable-vuetify",
+  "version": "1.0.3",
   "description": "Vue directive for making table columns resizable.",
   "private": false,
   "main": "lib/vue-columns-resizable.umd.min.js",
@@ -33,6 +33,6 @@
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
   },
-  "author": "Fuxy526",
+  "author": "Kreyco <wilmanmarin@hotmail.com>",
   "license": "MIT"
 }

@@ -1,11 +1,24 @@
-# vue-columns-resizable
+# vue-columns-resizable-vuetify
 
 <p>
-  <a href="https://www.npmjs.com/package/vue-columns-resizable"><img src="https://img.shields.io/npm/v/vue-columns-resizable.svg" alt="Version"></a>
-  <a href="https://www.npmjs.com/package/vue-columns-resizable"><img src="https://img.shields.io/npm/dt/vue-columns-resizable.svg" alt="Downloads"></a>
-  <a href="https://www.npmjs.com/package/vue-columns-resizable"><img src="https://img.shields.io/npm/l/vue-columns-resizable.svg" alt="License"></a>
+  <a href="https://www.npmjs.com/package/vue-columns-resizable-vuetify"><img src="https://img.shields.io/npm/v/vue-columns-resizable-vuetify.svg" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/vue-columns-resizable-vuetify"><img src="https://img.shields.io/npm/dt/vue-columns-resizable-vuetify.svg" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/vue-columns-resizable-vuetify"><img src="https://img.shields.io/npm/l/vue-columns-resizable-vuetify.svg" alt="License"></a>
 </p>
 
+## Project based
+
+https://github.com/Fuxy526/vue-columns-resizable
+https://www.npmjs.com/package/vue-columns-resizable
+
+And using Pull Request from
+https://github.com/onmotion/vue-columns-resizable
+
+## Changes
+
+Allow use on top elements (Vuetify use)
+
+## Setup
 Vue directive for making table columns resizable.
 
 [demo](https://fuxy526.github.io/vue-columns-resizable/)
@@ -15,7 +28,7 @@ Vue directive for making table columns resizable.
 ## Install
 
 ```sh
-npm install vue-columns-resizable --save
+npm install vue-columns-resizable-vuetify --save
 ```
 
 ## Usage
@@ -23,9 +36,9 @@ npm install vue-columns-resizable --save
 #### main.js
 
 ```javascript
-import VueColumnsResizable from './plugins/vue-columns-resizable';
+import VueColumnsResizableVuetify from './plugins/vue-columns-resizable-vuetify';
 
-Vue.use(VueColumnsResizable);
+Vue.use(VueColumnsResizableVuetify);
 ```
 
 #### *.vue
@@ -90,7 +103,7 @@ Resize on thead
 </table>
 ```
 
-Resize on v-data-table (Vuetify ^2.0)
+Resize on v-data-table (Using Vuetify ^2.0)
 
 ```html
 <v-data-table
@@ -106,5 +119,5 @@ Resize on v-data-table (Vuetify ^2.0)
 
 ## Changelog
 
-* 0.1.0 - Allow use on top elements (Vuetify use)
+* 1.0.3 - Allow use on top elements (Vuetify use)
 * 0.0.1 - Resize on columns & Resize on thead
