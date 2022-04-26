@@ -126,7 +126,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
 .container {
   width: 800px;
   margin-bottom: 20px;
@@ -135,5 +135,11 @@ export default {
 .table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.columns-resize-bar {
+  background-color: #050505;
+  /* width: 5px !important; */
+  /* height: 48px !important; */
 }
 </style>
