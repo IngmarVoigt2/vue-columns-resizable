@@ -93,6 +93,12 @@ export default (Vue) => {
                     if (!neighbourghTh) {
                         neighbourghTh = activeTh.previousElementSibling;
                     }
+                    if (!activeTh.style.width) {
+                        activeTh.style.width = activeTh.offsetWidth + 'px';
+                    }
+                    if (!neighbourghTh.style.width) {
+                        neighbourghTh.style.width = neighbourghTh.offsetWidth + 'px';
+                    }
 
                     // calculate table size if the table width is fixed
                     if (!opt.fixedWidthTable) {
