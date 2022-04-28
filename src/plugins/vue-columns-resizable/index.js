@@ -109,6 +109,14 @@ export default (Vue) => {
                     }
                 });
 
+                // block unintended resorting of v-data-table
+                bar.addEventListener('click', (e) => {
+                    e.stopImmediatePropagation();
+                    e.preventDefault();    
+                    // return false;
+
+                });
+
                 th.appendChild(bar);
             });
 
