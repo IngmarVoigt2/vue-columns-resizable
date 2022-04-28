@@ -49,10 +49,27 @@ export default (Vue) => {
                     table.style.width = parseInt(table.style.width) + e.movementX + 'px';
                 }
             };
+            const abortDivClick = e => {
+                e.stopImmediatePropagation();
+                e.preventDefault();    
+                return false;
+            };            
+            const abortThClick = e => {
+                e.stopImmediatePropagation();
+                e.preventDefault();    
+                if(removeThHandlers)
+                {
+                    removeThHandlers = false;  
+                    activeTh.removeEventListener('click', abortThClick, true);
+                    neighbourghTh.removeEventListener('click', abortThClick, true);     
+                }
+                return false;
+            };            
 
             let activeTh = null; // the th being resized
             let neighbourghTh = null; // the next except when the last column is being resized in that case it is the previous
             let resizing = false; // a resize started needed because we can not detect event handler was attached or not
+            let removeThHandlers = false;
             table.style.position = 'relative';
 
             applyTableWidth();
@@ -90,6 +107,12 @@ export default (Vue) => {
 
                     activeTh = e.target.parentElement;
                     neighbourghTh = activeTh.nextElementSibling;
+
+                    // block unintended resorting of v-data-table
+                    activeTh.addEventListener('click', abortThClick, true);
+                    neighbourghTh.addEventListener('click', abortThClick, true);
+
+
                     if (!neighbourghTh) {
                         neighbourghTh = activeTh.previousElementSibling;
                     }
@@ -110,11 +133,8 @@ export default (Vue) => {
                 });
 
                 // block unintended resorting of v-data-table
-                bar.addEventListener('click', (e) => {
-                    e.stopImmediatePropagation();
-                    e.preventDefault();    
-                });
-
+                bar.addEventListener('click', abortDivClick);
+                                
                 th.appendChild(bar);
             });
 
@@ -127,6 +147,7 @@ export default (Vue) => {
                 if (typeof opt.afterResize === 'function') {
                     opt.afterResize(ths);
                 }
+                removeThHandlers = true;
             });
 
             // resets the column sizes
