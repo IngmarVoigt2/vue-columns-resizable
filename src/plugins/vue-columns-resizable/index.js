@@ -113,8 +113,6 @@ export default (Vue) => {
                 bar.addEventListener('click', (e) => {
                     e.stopImmediatePropagation();
                     e.preventDefault();    
-                    // return false;
-
                 });
 
                 th.appendChild(bar);
